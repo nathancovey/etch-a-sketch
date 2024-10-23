@@ -8,20 +8,20 @@ h1 {
 
 .container {
     display: flex;
-    width: 1200px;
+    width: 960px;
     padding: 40px;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .square {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-color: black;
 }
 
 .title {
     display: flex;
-    width: 1200px;
-    justify-content: center;
+    width: auto;
+    padding: 10px 40px 10px 40px;
 }
