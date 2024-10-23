@@ -1,3 +1,27 @@
+/* text */
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* layouts */
+
+.container {
+    display: flex;
+    width: 1200px;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.square {
+    width: 250px;
+    height: 250px;
+    background-color: black;
+}
+
+.title {
+    display: flex;
+    width: 1200px;
+    justify-content: center;
 }
