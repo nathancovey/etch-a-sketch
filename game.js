@@ -1,24 +1,39 @@
 const container = document.querySelector('.container')
+const button = document.getElementById('button');
+const squaresInfo = document.querySelector('.squaresInfo');
 
-let squaresChoice = 44
-const containerWidth = 960
+button.addEventListener('click', () => {
+    squaresChoice = prompt('Enter number between 1 and 100:')
+    
+    if (!isNaN(squaresChoice) && squaresChoice > 0 && squaresChoice <= 100) {
+        createGrid(squaresChoice)
+    } else {
+        alert('Must be positive number less than 100.')
+        squaresChoice = prompt('Enter number between 1 and 100:')
+    }
+})
 
-const getSquaresChoice = function()
+function createGrid(squaresChoice) {
+    container.innerHTML = '';
+    const containerWidth = 960;
+    const squareSize = containerWidth / squaresChoice;
 
-for (let i = 0; i < squaresChoice * squaresChoice; i++) {
-    const square = document.createElement('div')
-    square.classList.add('square')
+    for (let i = 0; i < squaresChoice * squaresChoice; i++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.style.width = `${squareSize}px`;
+        square.style.height = `${squareSize}px`;
 
-    const squareSize = containerWidth / squaresChoice
-    square.style.width = `${squareSize}px`
-    square.style.height = `${squareSize}px`
+        square.addEventListener('mouseenter', () => {
+            square.style.backgroundColor = 'white';
+        });
 
-    container.appendChild(square)
+        container.appendChild(square);
+    }
 
-    square.addEventListener('mouseenter', () => {
-        square.style.backgroundColor = 'white'
-    })
+    squaresInfo.textContent = `Number of squares: ${squaresChoice}`
 }
 
+createGrid(50)
 
 
